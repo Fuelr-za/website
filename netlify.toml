@@ -1,0 +1,25 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# Handle form submissions
+[build.processing.html]
+  pretty_urls = true
+
+# Redirect all routes to index.html for SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Redirect form submissions to success page
+[[redirects]]
+  from = "/success"
+  to = "/success.html"
+  status = 200
+
+# Add privacy policy route
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/index.html"
+  status = 200
